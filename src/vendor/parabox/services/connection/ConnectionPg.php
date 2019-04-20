@@ -19,7 +19,8 @@ class ConnectionPg implements ConnectionInterface
 {
     const VERSION = "0.0.1";
 
-    private static $conn;
+    protected static $conn = null;
+    protected static $cdn  = null;
 
 
     /**
@@ -31,12 +32,16 @@ class ConnectionPg implements ConnectionInterface
      */
     public static function open(string $cdn = '') : boolean
     {
-        if (self::$conn === null  && empty($cdn)) {
+        if (self::$conn === null  && self::$cdn && empty($cdn)) {
             throw new Exception("String CDN was expected, nothing found and there is no active connection. fool.");
         }
 
+        if (! empty($cdn))  {
+            self::$cdn = $cdn;
+        }
+
         if (self::$conn === null) {
-            self::$conn = $pg_connect($cdn);
+            self::$conn = $pg_connect(self::$cdn);
         }
 
         return (self::$con !== false);

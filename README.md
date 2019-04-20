@@ -1,0 +1,8 @@
+# Parabox
+
+Proyecto de aplicación educativa para niños en etapa preescolar y primeros niveles de educación básica.
+
+pesar del avance y penetración de las tecnologías de información en los tiempos en que vivimos, no es común encontrar aplicaciones que den apoyo y complementen las actividades educativas de niños de los niveles primarios y preescolares. En efecto, se nos presentan diversos tipos de soluciones orientadas a establecimientos educativos, pero la mayoría de ellas se dirigen al área de la gestión educativa, la administración de centros educacionales, o al apoyo a la labor administrativo-docente (gestión de calificaciones, cursos, observaciones académicas, contacto con apoderados, etc.)
+
+Además, el uso indiscriminado de la tecnología para entretención, ha generado la sensación de que solo sirve para jugar y como distractor.
+Junto con ello, los productos tecnológicos tienen también que superar la desconfianza del estamento docente. Los profesores suelen hacer las cosas de ciertas maneras que funcionan para ellos. Si se les dice que deberían hacer las cosas de otra forma (que además necesita el aprendizaje de un nuevo producto), se generará un resistencia difícil de vender. Si no hay convencimiento real de que la tecnología añade valor a la docencia y al aprendizaje, entonces, ¿por qué deberían los profesores tomarse el tiempo de tratar con esto? E incluso si ven el valor que un nuevo producto tecnológico puede añadir, si está simplemente reinventando una estrategia que ya funciona, no sentirán interés en hacer el esfuerzo.

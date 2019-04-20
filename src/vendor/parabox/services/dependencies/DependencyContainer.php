@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
-namespace parabox\service\dependencies;
+namespace parabox\services\dependencies;
 
 
-use parabox\service\request\RequestBody;
-use parabox\service\routing\Router;
+use parabox\services\request\RequestBody;
+use parabox\services\routing\Router;
 
 class DependencyContainer
 {

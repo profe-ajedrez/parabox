@@ -15,4 +15,6 @@
  *
  */
 
-$router->add('/', 'IndexController#index');
+$router->add('/', 'controllers\IndexController#index');
+$router->add('/parabox/', 'controllers\IndexController#index');
+$router->add('/parabox/index.php', 'controllers\IndexController#index');

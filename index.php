@@ -36,9 +36,10 @@ require _PBX_APP_CONFIG_ . 'config.php';
  */
 require _PBX_APP_CONFIG_ . 'autoload_component.php';
 
-use parabox\service\dependencies\DependencyContainer;
+use parabox\services\request\RequestBody;
+use parabox\services\routing\Router;
 
-$router = DependencyContainer::routerFabric();
+$router = new Router( new RequestBody() );
 
 
 require _PBX_APP_CONFIG_ . 'rutas.php';

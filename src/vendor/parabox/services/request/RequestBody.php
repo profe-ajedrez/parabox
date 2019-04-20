@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-namespace parabox\service\request;
+namespace parabox\services\request;
 
 
 class RequestBody implements RequestBodyInterface

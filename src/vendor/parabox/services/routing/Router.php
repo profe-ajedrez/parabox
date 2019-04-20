@@ -1,6 +1,8 @@
 <?php declare(strict_types=1);
-namespace parabox\service\routing;
+namespace parabox\services\routing;
 
+
+use parabox\services\request\RequestBodyInterface;
 
 /**
  * Router
@@ -16,7 +18,7 @@ class Router
     private $viewPath = '';
 
 
-    public function __construct(Request_Interface $request, callable $_404 = null, string $basePath = _PBX_BASE_PATH_, string $viewPath = _PBX_VIEWS_)
+    public function __construct(RequestBodyInterface $request, callable $_404 = null, string $basePath = _PBX_BASE_PATH_, string $viewPath = _PBX_VIEWS_)
     {
         if (is_null($request)) {
             throw new Exception("RequestInterface expected. Null received in request parameter.");
@@ -39,15 +41,17 @@ class Router
     }
 
 
-    public function add( string $url, $action ) : void
+    public function add( string $url, $action )
     {
         $this->routes[$url] = $action;
+        return;
     }
 
 
-    public function setNotFound( callable $action ) : void
+    public function setNotFound( callable $action )
     {
         $this->notFound = $action;
+        return;
     }
 
 

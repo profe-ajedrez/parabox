@@ -10,7 +10,7 @@ class RequestBody implements RequestBodyInterface
     protected $get    = [];
     protected $head   = [];
     protected $put    = [];
-    protected $info   = [];
+    protected $server = [];
     protected $method = '';
 
 
@@ -68,15 +68,6 @@ class RequestBody implements RequestBodyInterface
     }
 
 
-    /**
-     * @return array
-     */
-    public function getInfo(): array
-    {
-        return $this->info;
-    }
-
-
     public function getBody()
     {
         $method = $_SERVER['REQUEST_METHOD'];
@@ -104,6 +95,14 @@ class RequestBody implements RequestBodyInterface
                 ];
                 break;
         }
+    }
+
+    /**
+     * @return array
+     */
+    public function getServer(): array
+    {
+        return $this->server;
     }
 
 

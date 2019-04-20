@@ -2,6 +2,7 @@
 namespace parabox\services\routing;
 
 
+use Exception;
 use parabox\services\request\RequestBodyInterface;
 
 /**
@@ -16,10 +17,25 @@ class Router
     private $request;
     private $basePath = '';
     private $viewPath = '';
+    private $viewFragments = '';
 
 
-    public function __construct(RequestBodyInterface $request, callable $_404 = null, string $basePath = _PBX_BASE_PATH_, string $viewPath = _PBX_VIEWS_)
-    {
+    /**
+     * Router constructor.
+     * @param RequestBodyInterface $request
+     * @param callable|null $_404
+     * @param string $basePath
+     * @param string $viewPath
+     * @param string $viewFragments
+     * @throws Exception
+     */
+    public function __construct(
+        RequestBodyInterface $request,
+        callable $_404 = null,
+        string $basePath = _PBX_BASE_PATH_,
+        string $viewPath = _PBX_VIEWS_,
+        string $viewFragments = _PBX_FRAGMENTS_
+    ) {
         if (is_null($request)) {
             throw new Exception("RequestInterface expected. Null received in request parameter.");
         }
@@ -38,6 +54,7 @@ class Router
         $this->request = $request;
         $this->basePath = $basePath;
         $this->viewPath = $viewPath;
+        $this->viewFragments = $viewFragments;
     }
 
 
@@ -69,11 +86,12 @@ class Router
                 $controller = $actionArr[0];
                 $method = $actionArr[1];
 
-                $instancedController = new $controller( $this->request, $this->basePath, $this->viewPath );
+                $instancedController = new $controller( $this->request, $this->basePath, $this->viewPath, $this->viewFragments );
                 return $instancedController->$method();
             }
         }
         call_user_func_array($this->notFound, [$_SERVER['REQUEST_URI']]);
+        return;
     }
 
 }

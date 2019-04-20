@@ -1,6 +1,6 @@
-<?php
+<?php /** @noinspection ALL */
 declare(strict_types=1);
-namespace \parabox\utils;
+namespace parabox\utils;
 
 
 /**
@@ -18,6 +18,12 @@ class FileExtensions
     protected static $comment   = "#";
 
 
+    /**
+     * @param string $file
+     * @param string $excludeLinesStartedWith
+     * @param string $eol
+     * @return array
+     */
     public static function fileToArray(
         string $file = '',
         string $excludeLinesStartedWith = '#',
@@ -36,23 +42,34 @@ class FileExtensions
     }
 
 
+    /**
+     * @param $val
+     * @param $key
+     * @param $arr
+     */
     public static function step($val, $key, &$arr)
     {
         $unCaso     = explode(self::$separator, $val);
         $posComment = strpos($unCaso[ 0 ], self::$comment);
 
         if ($posComment === false || $posComment > 0) {
-            $arr[ $uncaso[ 0 ] ] = $unCaso[ 1 ];
+            $arr[ $unCaso[ 0 ] ] = $unCaso[ 1 ];
         }
     }
 
 
+    /**
+     * @param string $sep
+     */
     public static function setSeparator(string $sep = ' ')
     {
         self::$separator = $sep;
     }
 
 
+    /**
+     * @return string
+     */
     public static function getLog()
     {
         return self::$log;

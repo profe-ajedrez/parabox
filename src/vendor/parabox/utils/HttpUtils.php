@@ -15,7 +15,7 @@ class HttpUtils
      * @param integer $http_status_code
      * @return void
      */
-    public static function redirectTo(string $url, int $http_status_code = 200) : void
+    public static function redirectTo(string $url, int $http_status_code = 200)
     {
         static $http = array (
             100 => "HTTP/1.1 100 Continue",

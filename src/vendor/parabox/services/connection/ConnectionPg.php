@@ -1,6 +1,9 @@
-<?php
+<?php /** @noinspection ALL */
+/** @noinspection ALL */
 declare(strict_types=1);
 namespace parabox\services\connection;
+
+use Exception;
 
 /**
  * ConnectionPg
@@ -30,7 +33,7 @@ class ConnectionPg implements ConnectionInterface
      * @param  string $cdn el string de conexiòn para intentar conectarse a una db postgre. si nulo o vacio arroja exception
      * @return boolean
      */
-    public static function open(string $cdn = '') : boolean
+    public static function open(string $cdn = '') : bool
     {
         if (self::$conn === null  && self::$cdn && empty($cdn)) {
             throw new Exception("String CDN was expected, nothing found and there is no active connection. fool.");
@@ -41,10 +44,10 @@ class ConnectionPg implements ConnectionInterface
         }
 
         if (self::$conn === null) {
-            self::$conn = $pg_connect(self::$cdn);
+            self::$conn = pg_connect(self::$cdn);
         }
 
-        return (self::$con !== false);
+        return (self::$conn !== false);
     }
 
 
@@ -56,14 +59,14 @@ class ConnectionPg implements ConnectionInterface
      * @throws Exception
      * @return boolean
      */
-    public static function close() : boolean
+    public static function close() : bool
     {
         if (self::$conn === null) {
             throw new Exception("There is no connection to close. fool.");
         }
 
         if (pg_close(self::$conn)) {
-           self::$con = null;
+           self::$conn = null;
            return true;
         }
 
@@ -79,7 +82,7 @@ class ConnectionPg implements ConnectionInterface
      * @throws Exception   Si $sql nulo o vacio o si no hay conexiòn establecida (Si no se ha usado antes el mètodo open)
      * @param  string $sql
      * @param  array $params
-     * @return void
+     * @return mixed
      */
     public static function query(string $sql, array $params = [])
     {

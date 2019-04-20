@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection ALL */
 /**ERRORES PHP VISIBLES**/
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -17,6 +17,7 @@ define('_PBX_APP_CONFIG_', _PBX_APP_PATH_ . 'config' . _PBX_SEPARATOR_);
 define('_PBX_PARABOX_LIB_', _PBX_VENDOR_PATH_ . 'parabox' . _PBX_SEPARATOR_);
 
 define('_PBX_VIEWS_', _PBX_APP_PATH_ . 'views' . _PBX_SEPARATOR_);
+define('_PBX_FRAGMENTS_', _PBX_VIEWS_ . 'shared_fragments' . _PBX_SEPARATOR_);
 define('_PBX_CTRLS_', _PBX_APP_PATH_ . 'controllers' . _PBX_SEPARATOR_);
 
 /**
@@ -36,11 +37,10 @@ require _PBX_APP_CONFIG_ . 'config.php';
  */
 require _PBX_APP_CONFIG_ . 'autoload_component.php';
 
-use parabox\services\request\RequestBody;
-use parabox\services\routing\Router;
+use \parabox\services\dependencies\DependencyContainer;
 
-$router = new Router( new RequestBody() );
-
+DependencyContainer::setConfigDependency($config);
+$router = DependencyContainer::routerFabric();
 
 require _PBX_APP_CONFIG_ . 'rutas.php';
 

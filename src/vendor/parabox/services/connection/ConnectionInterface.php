@@ -5,7 +5,7 @@ namespace parabox\services\connection;
 
 interface ConnectionInterface
 {
-    public static function open(string $cdn = '') : boolean;
-    public static function close() : boolean;
+    public static function open(string $cdn = '') : bool;
+    public static function close() : bool;
     public static function query(string $sql, array $params);
 }

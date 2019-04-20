@@ -9,7 +9,7 @@ interface RequestBodyInterface
     public function getPost(): array;
     public function getGet(): array;
     public function getHead(): array;
-    public function getInfo(): array;
+    public function getServer(): array;
 
 
 }

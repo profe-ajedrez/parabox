@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection ALL */
+/** @noinspection ALL */
 /**
  * Componente de autocarga de clases.
  */
@@ -23,10 +24,15 @@ function pbx_controllers_loader($className)
     requireIfExist($className, _PBX_CTRLS_);
 }
 
+/**
+ * @param $file
+ * @param $path
+ */
 function requireIfExist($file, $path)
 {
     $file = $path . str_replace("\\", DIRECTORY_SEPARATOR, $file) . '.php';
     if (file_exists($file)) {
-        require_once($file);
+        /** @noinspection PhpIncludeInspection */
+        require($file);
     }
 }

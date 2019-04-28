@@ -1,0 +1,12 @@
+{
+  "filename" : "locale-spanish.json",
+  "created"  : "19-04-2019",
+  "author"   : "Andrés Reyes a.k.a. Jacobopus",
+
+  "ui"       : {
+      "home" : {
+          "title"       : "Parabox",
+          "description" : "Las tareas ahora son entretenidas"
+      }
+  }
+}

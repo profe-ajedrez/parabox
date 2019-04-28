@@ -1,0 +1,24 @@
+{
+    "name"         : "profe-ajedrez/parabox",
+    "repositories" : [
+        {
+            "type": "vcs",
+            "url": "https://github.com/profe-ajedrez/parabox"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "parabox\\":"src/"
+        }
+    },
+
+    "require": {
+        "php"                       : ">=7.0",
+        "monolog/monolog"           : "1.9.1",
+        "friendsofphp/php-cs-fixer" : "2",
+        "filp/whoops"               : "2",
+        "hybridauth/hybridauth"     : "3.0.0-rc.10"
+    }
+
+}

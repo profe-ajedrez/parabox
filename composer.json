@@ -2,17 +2,28 @@
     "name": "profe-ajedrez/parabox",
     "description": "Tarea de Inacap. App educativa",
     "type": "project",
-    "require": {
-        "filp/whoops": "^2.3",
-        "php": "^7.3",
-        "monolog/monolog": "^1.24",
-        "hybridauth/hybridauth": "^2.14"
-    },
+
     "license": "GPL 3.0",
+
     "authors": [
         {
             "name": "profe-ajedrez",
             "email": "chess.coach.ar@gmail.com"
         }
-    ]
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "parabox\\" : "./src/",
+            "app\\"     : "./public/"
+        }
+    },
+
+    "require": {
+        "filp/whoops": "^2.3",
+        "php": "^7.3",
+        "monolog/monolog": "^1.24",
+        "hybridauth/hybridauth": "^2.14",
+        "friendsofphp/php-cs-fixer": "^2.14"
+    }
 }

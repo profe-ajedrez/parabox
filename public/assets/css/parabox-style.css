@@ -1,0 +1,124 @@
+/* IMPORTS -----------------------------------------------------------------------------------------------------------*/
+
+/* VARS --------------------------------------------------------------------------------------------------------------*/
+:root {
+    --pb-title-color       : #41CFE1;
+    --pb-main-footer-color : #121B5E;
+    --pb-title-color-dark  : #016F81;
+}
+
+/* FONTS -------------------------------------------------------------------------------------------------------------*/
+html {
+    font-family : "Fira Code", Hack, monospace;
+    font-size   : 10px!important;
+}
+
+.org-font {
+    font-family: orbitron, "Fira Code", monospace;
+}
+
+.org-title-size {
+    font-size  : 3rem;
+}
+
+/* COLORS ------------------------------------------------------------------------------------------------------------*/
+.parabox-title-color-text {
+    color  :  var(--pb-title-color);
+}
+
+.parabox-footer-background {
+    background : var(--pb-main-footer-color );
+}
+
+/* IMAGES ------------------------------------------------------------------------------------------------------------*/
+.welcome-heroine {
+    background-image : url("../img/welcome/welcome.jpg");
+    background-size     : cover;
+    background-repeat   : no-repeat;
+    background-position: center center;
+    width: 100vw;
+    height  : 100vh;
+
+
+}
+
+.welcome-heroine-studing {
+    background-image : url("../img/welcome/master-it.jpg");
+    background-size     : cover;
+    background-repeat   : no-repeat;
+    background-position: center center;
+    width: 100vw;
+    height : 150vh;
+}
+
+/* SEPARATORS --------------------------------------------------------------------------------------------------------*/
+.separator {
+    border-bottom : 1px solid var(--pb-title-color);
+}
+
+/* SEMANTICS ---------------------------------------------------------------------------------------------------------*/
+.welcome-footer-height{
+    height : 50vh;
+}
+
+/* COMPONENTS---------------------------------------------------------------------------------------------------------*/
+
+.input-login {
+    background : transparent !important;
+    outline    : none !important;
+    width      : 10rem;
+    color      : var(--pb-title-color);
+    height     : 1.5rem;
+
+    border-radius        : 4px;
+    -moz-border-radius   : 4px;
+    -webkit-border-radius: 4px;
+
+    padding-left : 3px;
+    padding-right: 3px;
+}
+
+.input-login-border {
+    border : 1px solid var(--pb-title-color);
+}
+
+/* GRIDS -------------------------------------------------------------------------------------------------------------*/
+.pb-nav-grid-container {
+    display : grid;
+    grid-template-columns : 30% 50%;
+}
+
+.pb-nav-grid-centered-item {
+    justify-self : center;
+    align-self   : center;
+}
+
+/* HELPERS -----------------------------------------------------------------------------------------------------------*/
+
+.pb-bajorrelieve {
+    text-shadow: 1px 1px 1px var(--pb-title-color-dark);
+}
+
+.pb-centerV {
+    align-items: center;
+}
+
+.pb-login-height {
+    height     : 1.7rem;
+}
+
+
+
+#pb-login {
+    background : transparent;
+    border     : none;
+
+}
+
+#pb-hdr-wrapper h1 {
+    display : inline-block;
+}
+
+#pb-hdr-wrapper span {
+    margin-right : 1rem;
+}

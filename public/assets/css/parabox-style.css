@@ -5,6 +5,15 @@
     --pb-title-color       : #41CFE1;
     --pb-main-footer-color : #121B5E;
     --pb-title-color-dark  : #016F81;
+
+    --pb-large-hero1-x     : center;
+    --pb-medium-hero1-x    : -100vw;
+    --pb-small-hero1-x     : -150vw;
+
+    --pb-large-hero2-x     : center;
+    --pb-medium-hero2-x    : -45vh;
+    --pb-small-hero2-x     : -90vw;
+
 }
 
 /* FONTS -------------------------------------------------------------------------------------------------------------*/
@@ -14,7 +23,7 @@ html {
 }
 
 .org-font {
-    font-family: orbitron, "Fira Code", monospace;
+    font-family: orbitron, "Fira Code", Hack, monospace;
 }
 
 .org-title-size {
@@ -32,22 +41,22 @@ html {
 
 /* IMAGES ------------------------------------------------------------------------------------------------------------*/
 .welcome-heroine {
-    background-image : url("../img/welcome/welcome.jpg");
+    background-image    : url("../img/welcome/welcome.jpg");
     background-size     : cover;
     background-repeat   : no-repeat;
     background-position: center center;
-    width: 100vw;
-    height  : 100vh;
+    width  : 100vw;
+    height : 100vh;
 
 
 }
 
 .welcome-heroine-studing {
-    background-image : url("../img/welcome/master-it.jpg");
+    background-image    : url("../img/welcome/master-it.jpg");
     background-size     : cover;
     background-repeat   : no-repeat;
     background-position: center center;
-    width: 100vw;
+    width  : 100vw;
     height : 150vh;
 }
 

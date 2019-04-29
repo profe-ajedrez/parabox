@@ -29,3 +29,19 @@ $config["cdn"]      = "host=" .      $config["host"] .
 $config["active-locale"] = "spanish";
 $config["locale-path"]   = _PBX_CONFIG_PATH_ . "locales" . _PBX_SEPARATOR_;
 $config["locale-prefix"] = "locale-";
+
+$config["assets-url"] = $config["base-url"]   . _PBX_ASSETS_PATH_;
+$config["css-url"]    = $config["assets-url"] . _PBX_CSS_PATH_;
+$config["img-url"]    = $config["assets-url"] . _PBX_IMG_PATH_;
+$config["js-url"]     = $config["assets-url"] . _PBX_JS_PATH_;
+
+
+$config["css-tag"] = "[CSS]";
+$config["img-tag"] = "[IMG]";
+$config["js-tag"]  = "[JS]";
+
+
+$config["custom-tags"] = [];
+$config["custom-tags"]["title"] = [];
+$config["custom-tags"]["title"]["tag"]   = "{title}";
+$config["custom-tags"]["title"]["value"] = "Paradox. Open Source EdvApp.";

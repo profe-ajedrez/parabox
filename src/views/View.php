@@ -53,7 +53,7 @@ class View
      * @return string
      * @throws Exception
      */
-    public function render(string $viewName = "", string $theme = "")
+    public function render(string $viewName = "", string $theme = "") : string
     {
         $theme = (
             empty($theme) ? "" : /** @lang text */
@@ -76,7 +76,58 @@ THEMELINK
 
         //add the theme link just before </head>
         $view = str_replace('</head>', $theme . "\n</head>", $view);
-        $view = str_replace($this->config["css-tag"], $this->config["base-url"] . 'assets/css', $view);
-        echo $view;
+        $view = str_replace($this->config["css-tag"], $this->config["css-url"], $view);
+        $view = str_replace($this->config["img-tag"], $this->config["img-url"], $view);
+        $view = str_replace($this->config["js-tag"],  $this->config["js-url"], $view);
+
+        return $view;
+    }
+
+
+    /**
+     *
+     */
+    public function setCustomTag(string $tag = "", $value = "", array $config)
+    {
+        if (empty($tag)) {
+            throw new Exception("String parameter expected in \$tag. Null or empty received.");
+        }
+
+        if (empty($config)) {
+            throw new Exception("Array parameter expected. Null or empty received.");
+        }
+
+
+        $config["custom-tags"][$tag]["value"] = $value;
+    }
+
+
+    public function getCustomTag(string $tag = "", array $config)
+    {
+        if (empty($tag)) {
+            throw new Exception("String parameter expected in \$tag. Null or empty received.");
+        }
+
+        if (!array_key_exists($tag, $config["custom-tags"])) {
+            throw new Exception("Unrecognized \$tag $tag in configurations.");
+        }
+
+        return $config["custom-tags"][$tag]["value"];
+    }
+
+
+    public function replaceCustomTags(string $str, array $config)
+    {
+
+        foreach($config["custom-tags"] as $tag => $container) {
+            $value = $container["value"];
+            if (is_array($container["value"]) || is_object($container["value"])) {
+                $value = json_encode($container["value"]);
+            }
+
+            $str = str_replace($container["tag"], $value, $str);
+        }
+
+        return $str;
     }
 }

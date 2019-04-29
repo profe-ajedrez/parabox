@@ -21,7 +21,6 @@ class IndexController extends BaseController
     {
 
         $this->view->addFragment("first_fragment.html");
-        $this->view->addFragment("welcome/welcome_title.html");
         $this->view->addFragment("meta.html");
         $this->view->addFragment("shared_css.html");
         $this->view->addFragment("closing_head.html");
@@ -34,6 +33,10 @@ class IndexController extends BaseController
         $result = ConnectionPgAlias::query("INSERT INTO test.test (stringfield) VALUES ('Jacobo Reyes')");
         echo $result;
         */
-         $this->view->render();
+
+        $strView = $this->view->render();
+        $strView = $this->replaceCustomTags($strView);
+
+        $this->serve($strView);
     }
 }

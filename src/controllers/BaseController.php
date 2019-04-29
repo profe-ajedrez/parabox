@@ -16,6 +16,7 @@ abstract class BaseController
     protected $basePath='';
     protected $viewPath='';
     protected $viewFragmentPath='';
+    protected $config;
 
     /**
      * Para usar a futuro. Almacenará el tipo de request, POST, GET, PUT o HEAD
@@ -39,6 +40,10 @@ abstract class BaseController
             throw new Exception('RequestBodyInterface parameter expected. Received null.');
         }
 
+        if (empty($config)) {
+            throw new Exception("Array parameter \$config expected. Null or empty received.");
+        }
+
         $this->view = new  View(
             new ViewLoader($viewPath, $viewFragmentPath),
             $config
@@ -48,6 +53,7 @@ abstract class BaseController
         $this->basePath = $basePath;
         $this->viewPath = $viewPath;
         $this->viewFragmentPath = $viewFragmentPath;
+        $this->config   = $config;
     }
 
 
@@ -103,5 +109,23 @@ abstract class BaseController
         $jsonResponse["msg"] = $msg;
 
         return $jsonResponse;
+    }
+
+
+    /**
+     * serve
+     *
+     * @param string $strView
+     * @return void
+     */
+    public function serve(string $strView)
+    {
+        echo $strView;
+    }
+
+
+    protected function replaceCustomTags(string $strView = "")
+    {
+        return $this->view->replaceCustomTags($strView, $this->config);
     }
 }

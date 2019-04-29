@@ -24,7 +24,10 @@ define('_PBX_SRC_PATH_', _PBX_BASE_PATH_ . 'src' . _PBX_SEPARATOR_);
 define('_PBX_VIEWS_PATH_', _PBX_PUBLIC_PATH_ . 'views' . _PBX_SEPARATOR_);
 define('_PBX_FRAGMENTS_PATH_', _PBX_VIEWS_PATH_ . 'shared_fragments' . _PBX_SEPARATOR_);
 
-define('_PBX_PUBLIC_URL_', "http://localhost:4567/parabox/public/");
+define('_PBX_ASSETS_PATH_', 'assets' . _PBX_SEPARATOR_);
+define('_PBX_CSS_PATH_', 'css' . _PBX_SEPARATOR_);
+define('_PBX_IMG_PATH_', 'img' . _PBX_SEPARATOR_);
+define('_PBX_JS_PATH_', 'js' . _PBX_SEPARATOR_);
 
 /**
  * $config
@@ -36,6 +39,9 @@ $config = [];
  * Cargamos las ocnfiguraciones
  */
 require _PBX_CONFIG_PATH_ . 'config.php';
+
+
+
 
 use \parabox\services\dependencies\DependencyContainer;
 

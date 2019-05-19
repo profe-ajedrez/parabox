@@ -117,6 +117,10 @@ html {
 }
 
 
+.pb-call-to-action {
+    font-size    : 6rem;
+    word-wrap: break-word;
+}
 
 #pb-login {
     background : transparent;

@@ -16,5 +16,7 @@
  */
 
 $router->add('/', 'app\controllers\IndexController#index');
-$router->add('/parabox/', 'app\controllers\IndexController#index');
-$router->add('/parabox/index.php', 'app\controllers\IndexController#index');
+$router->add('/index.php', 'app\controllers\IndexController#index');
+
+$router->add('/controlpanel', 'app\controllers\ControlPanelController#index');
+$router->add('/activity',     'app\controllers\ActivityController#index');

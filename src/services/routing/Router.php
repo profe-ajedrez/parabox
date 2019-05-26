@@ -78,6 +78,7 @@ class Router
 
     public function dispatch()
     {
+    
         foreach ($this->routes as $url => $action) {
             if ($url == $_SERVER['REQUEST_URI']) {
                 if (is_callable($action)) {

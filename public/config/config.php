@@ -13,7 +13,7 @@ if (!isset($config) || !is_array($config)) {
 }
 
 
-$config["base-url"] = "http://localhost:8080/parabox/public/";
+$config["base-url"] = "http://localhost:8080/public/";
 $config["driver"]   = "pgsql";
 $config["host"]     = "localhost";
 $config["db-usr"]   = "jacobopus";

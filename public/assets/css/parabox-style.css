@@ -35,6 +35,10 @@ html {
     color  :  var(--pb-title-color);
 }
 
+.pb-white-text {
+    color  :  #ffffff;
+}
+
 .parabox-footer-background {
     background : var(--pb-main-footer-color );
 }
@@ -88,7 +92,7 @@ html {
 }
 
 .input-login-border {
-    border : 1px solid var(--pb-title-color);
+    border : 1px solid var(--pb-title-color)!important;
 }
 
 /* GRIDS -------------------------------------------------------------------------------------------------------------*/
@@ -119,7 +123,7 @@ html {
 
 .pb-call-to-action {
     font-size    : 6rem;
-    word-wrap: break-word;
+    word-wrap    : break-word;
 }
 
 #pb-login {
@@ -134,4 +138,53 @@ html {
 
 #pb-hdr-wrapper span {
     margin-right : 1rem;
+}
+
+.pb-h2 {
+    font-size : 2.8rem!important;
+}
+
+.pb_box {
+    background : var(--pb-main-footer-color);
+}
+
+.pb-text {
+    word-wrap : break-word;
+    font-size : 1.75rem; 
+}
+
+p{
+    white-space:normal;
+    text-align : justify;
+}
+
+.top-1em {
+    margin-top : 1em!important;
+}
+
+.top-11em {
+    margin-top : 11em!important;
+}
+
+.padding0{
+    padding : 0px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--pb-title-color);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--pb-title-color);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--pb-title-color);
+  }
+
+.shadow {
+    -webkit-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.34);
+    -moz-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.34);
+    box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.34);
 }

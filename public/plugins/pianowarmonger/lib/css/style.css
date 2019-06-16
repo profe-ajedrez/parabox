@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#canvas {
+  margin: 0 auto;
+  border: 1px solid black;
+  display: flex;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  font-size: 55px;
+  margin: 25px;
+}
+
+body {
+  background: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.welcome, .won {
+  color: white;
+  background: #4c418e;
+  min-height: 200px;
+  width: 700px;
+  text-align: center;
+  font-family: 'Orbitron';
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  padding: 10px;
+  margin: 10px;
+}
+
+.space {
+  font-size: 30px;
+}
+
+.welcome-header {
+  font-size: 24px;
+}
+
+.instructions {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+#mute-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 25px;
+  width: 25px;
+  background-size: 100%;
+}
+
+.off {
+  background: url('./white_mute_off.png');
+}
+
+.off:hover {
+  cursor: pointer;
+}
+
+.on {
+  background: url('./white_mute_on.png');
+}
+
+.on:hover {
+  cursor: pointer;
+}
+
+.centered-left {
+  position: absolute;
+  left: 50%;
+}
+
+.centered-right {
+  position: relative;
+  left: -50%;
+  border: 1px solid red;
+}
+
+.won-message {
+  font-family: 'Roboto', sans-serif;
+  line-height: 30px;
+  font-size: 22px;
+}
+
+.song-button {
+  font-family: 'Orbitron';
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 25px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.song-button:hover {
+  cursor: pointer;
+  background-color: #575757;
+  color: white;
+  transition: 0.2s ease-in-out;
+}

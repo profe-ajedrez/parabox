@@ -19,4 +19,10 @@ $router->add('/', 'app\controllers\IndexController#index');
 $router->add('/index.php', 'app\controllers\IndexController#index');
 
 $router->add('/controlpanel', 'app\controllers\ControlPanelController#index');
-$router->add('/activity',     'app\controllers\ActivityController#index');
+$router->add('/nowayout',     'app\controllers\NowayoutController#index');
+$router->add('/piano',        'app\controllers\PianoController#index');
+
+$router->add('/register',     'app\controllers\RegisterController#index');
+$router->add('/register/process',     'app\controllers\RegisterController#process');
+
+$router->add('/login',     'app\controllers\LoginController#index');

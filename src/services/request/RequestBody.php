@@ -7,6 +7,7 @@ class RequestBody implements RequestBodyInterface
 
     protected $post   = [];
     protected $get    = [];
+    protected $raw    = "";
     protected $head   = [];
     protected $put    = [];
     protected $server = [];
@@ -30,6 +31,7 @@ class RequestBody implements RequestBodyInterface
     {
         $this->post   = array_merge([], $_POST);
         $this->get    = array_merge([], $_GET);
+        $this->raw    = file_get_contents("php://input");
         $this->server = array_merge([], $_SERVER);
         $this->method = $_SERVER['REQUEST_METHOD'];
     }
@@ -96,6 +98,11 @@ class RequestBody implements RequestBodyInterface
         }
     }
 
+    public function getRaw()
+    {
+        return $this->raw;
+    }
+    
     /**
      * @return array
      */

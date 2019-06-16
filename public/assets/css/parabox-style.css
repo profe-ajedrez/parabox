@@ -188,3 +188,16 @@ p{
     -moz-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.34);
     box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.34);
 }
+
+.pb-box {
+     border : 1px solid var(--pb-title-color);
+    -webkit-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.34);
+    -moz-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.34);
+    box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.34);    
+
+    border-radius :3px;
+}
+
+.pb-100 {
+    width : 100%;
+}

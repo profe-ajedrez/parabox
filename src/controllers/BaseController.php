@@ -1,7 +1,8 @@
 <?php
 declare(strict_types=1);
 namespace parabox\controllers;
-
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 use Exception;
 use parabox\services\request\RequestBodyInterface;
 use parabox\views\View;

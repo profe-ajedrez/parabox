@@ -29,6 +29,10 @@ define('_PBX_PUBLIC_PATH_', _PBX_BASE_PATH_ . 'public' . _PBX_SEPARATOR_);
 define('_PBX_CONFIG_PATH_', _PBX_PUBLIC_PATH_ . 'config' . _PBX_SEPARATOR_);
 define('_PBX_SRC_PATH_', _PBX_BASE_PATH_ . 'src' . _PBX_SEPARATOR_);
 
+define('_PBX_JSON_PATH_', _PBX_BASE_PATH_ . 'db' . _PBX_SEPARATOR_);
+
+define('_PBX_LOG_PATH_',  _PBX_BASE_PATH_ . 'logs' . _PBX_SEPARATOR_);
+
 define('_PBX_VIEWS_PATH_', _PBX_PUBLIC_PATH_ . 'views' . _PBX_SEPARATOR_);
 define('_PBX_FRAGMENTS_PATH_', _PBX_VIEWS_PATH_ . 'shared_fragments' . _PBX_SEPARATOR_);
 

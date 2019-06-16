@@ -10,7 +10,7 @@ class JsonFileReader
 {
     private $localeFile    = "";
     private $fileExtension = "json";
-    private $jsonLoader;
+    private $jsonLoaderAlgoritmo;
 
     /**
      * JsonFileReader constructor.
@@ -24,8 +24,16 @@ class JsonFileReader
         callable $jsonLoader = null
     ) {
         $this->localeFile    = $localeFile;
-        $this->fileExtension = $fileExtensions;
-        $this->jsonLoader    = (is_null($jsonLoader) ? FileExtensions::readJsonFile : $jsonLoader);
+        $this->fileExtension = $fileExtension;
+
+        if (is_null($jsonLoader)) {
+            $this->jsonLoaderAlgoritmo  = function($f) {
+                return FileExtensions::readJsonFile($f);
+            };
+        } else {
+
+            $this->jsonLoaderAlgoritmo =  $jsonLoader;
+        }
     }
 
 
@@ -43,8 +51,23 @@ class JsonFileReader
         }
 
         if (file_exists($this->localeFile . "." . $this->fileExtension)) {
-            return $this->jsonLoader($this->localeFile . "." . $this->fileExtension);
+            return $this->jsonLoaderAlgoritmo($this->localeFile . "." . $this->fileExtension);
         }
         throw new Exception("Locale file not found");
+    }
+
+
+    public function jsonLoader($file = "", $assoc = false) 
+    {
+        if (file_exists($file)) {
+            return FileExtensions::readJsonFile($file, $assoc);
+        }
+        throw new Exception("Json file not found");
+    }
+
+
+    public function jsonWriter(string $file, string $data) 
+    {
+        FileExtensions::writeJsonFile($file, $data);
     }
 }

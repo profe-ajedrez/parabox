@@ -31,11 +31,18 @@ class FileExtensions
         $locale = file_get_contents($file);
         if ($locale !== false) {
             $json = json_decode($locale, $assoc);
-            if (json_last_error() != 0) {
+            $_json_error = json_last_error();
+            if ($_json_error == 0) {
                 return $json;
             }
-            throw new JsonException("It is seems that json file $file was in incorrect format or bad constructed.");
+            throw new JsonException("It is seems that json file $file was in incorrect format or bad constructed. json error N° " . $_json_error);
         }
+    }
+
+
+    public static function writeJsonFile(string $file, string $data)
+    {
+        file_put_contents($file, $data);
     }
 
     /**

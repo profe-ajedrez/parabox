@@ -9,7 +9,7 @@
                 <div class="col-sm-12 col-md-3">
                     <input  type="text"     id="pb-user"  class="input-login input-login-border parabox-title-color-text" placeholder="username" />
                     <input  type="password" id="pb-pass"  class="input-login input-login-border parabox-title-color-text" placeholder="password" />
-                    <button type="button"   id="pb-login" class="input-login input-login-border parabox-title-color-text padding0"><span class="parabox-title-color-text">LOGIN</span></button>
+                    <a href="http://localhost:8080/controlpanel"  style="padding:1em;" class="input-login input-login-border parabox-title-color-text"><span class="parabox-title-color-text">LOGIN</span></a>
                 </div>
             </form>
         </div>
@@ -18,12 +18,15 @@
         <div class = "row">
             <div class = "col-sm-12 col-md-6">
                 <h2 class = "pb-h2 parabox-title-color-text org-font top-1em">¿Por que estudiar no puede ser entretenido?</h2>
-                <div>
+                <div style="padding:1rem">
                     <p class="org-font parabox-title-color-text pb-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                     </p>
+                </div>
+                <div>
+                    <a href="{register}" class="pb-100 reg-text "  style="width:50%;margin:auto; display:block; text-align:center; background: #115599; color: white; text-decoration:none; padding:1em;">CREAR NUEVA CUENTA</a>
                 </div>
             </div>
         </div>
@@ -49,3 +52,76 @@
 
     <footer class="welcome-footer-height parabox-footer-background">
     </footer>
+
+
+    <script src="[JS]pb_selector.js"></script>
+    <script src="[JS]pb_ajax.js"></script>
+    
+    <script>
+    
+    let login = (function(window, document, undefined) {
+        let _btnLogin;
+        
+        function _load() {
+            //_btnLogin = __("#btnLogin");
+        }
+        
+        function _getResponsePost(r) {
+            if (r && r.response) {
+                const _response = JSON.parse(r.response);
+    
+                if (_response.success != undefined && _response.success ===true) {
+                    
+                    window.location.assign("/controlpanel");
+                } else if (_response.success != undefined && _response.success === false) {
+                    _response.msg = ( _response.msg ? _response.msg : "Algo salió mal y el servidor no devolvio razones." );
+                    alert(_response.msg );
+                } else if (_response.success == undefined) {
+                    alert("Algo salió mal y el servidor no devolvio razones.");
+                }
+            }
+            
+        }
+    
+        function _loginHandler() {
+            let _userName = __("#pb-user").elems,
+                _password = __("#pb-pass").elems;
+    
+            let _ajax = new _Request({
+                url       : "/login",
+                method    : "POST",
+                whenReady : _getResponsePost
+            });
+            
+            let _payLoad = {
+                    "username" : _userName.value,
+                    "password" : _password.value
+                };
+    
+            _ajax.useDefaultBehaviour = false;
+            _ajax.open()
+                 .send(_payLoad);
+        }
+    
+        function _listeners() {
+          
+        }
+    
+        function _run() {
+            _load();
+            _listeners();
+        }
+    
+        let publicApi = {};
+    
+        publicApi.run = _run;
+    
+        return publicApi;
+    })(window, document);
+    
+    window.onload = function(e) {
+        login.run();
+    };
+    
+    </script>
+    

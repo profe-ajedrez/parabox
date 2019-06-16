@@ -8,4 +8,5 @@ interface RequestBodyInterface
     public function getGet(): array;
     public function getHead(): array;
     public function getServer(): array;
+    public function getRaw();
 }

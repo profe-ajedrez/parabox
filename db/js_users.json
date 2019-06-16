@@ -1,0 +1,12 @@
+{
+    "admin": {
+        "username": "admin",
+        "mail": "admin@m.cl",
+        "password": "$2y$10$X5U53m.l43\/ocSXoqJ5KUeea8EK58LhK2ENsRDHhnN6eJb553s9ZO"
+    },
+    "jacobo": {
+        "username": "jacobo",
+        "mail": "j@j.cl",
+        "password": "$2y$10$4Gyb8Xn3a.3CHz6h5Fzhv.s32p5hdw26nkpyYZtLP\/Ypr\/C18NkVq"
+    }
+}

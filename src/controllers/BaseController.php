@@ -8,6 +8,7 @@ use parabox\services\request\RequestBodyInterface;
 use parabox\views\View;
 use parabox\views\ViewLoader;
 
+
 abstract class BaseController
 {
     const VERSION = "0.1.1";
